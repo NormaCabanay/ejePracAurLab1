@@ -34,10 +34,10 @@ public class Empresa {
         empleados.add(empleado);
     }
     public void mostrarEmpleado(){
-         for (Empleado empleado : empleado) {
-            System.out.println(empleado.getNombre() + " " + empleado.getApellido()+" "
-                    + ""+empleado.getDni()+" "+ empleado.getCategoria()+" "
-                            + ""+empleado.getSueldo()+" "+empleado.getEmpresa());
+         for (Empleado em: empleado) {
+            System.out.println(em.getNombre() + " " + em.getApellido()+" "
+                    + ""+em.getDni()+" "+ em.getPuesto()+" "
+                            + ""+em.getSueldo()+" "+em.getEmpresa());
         }
     } 
 }

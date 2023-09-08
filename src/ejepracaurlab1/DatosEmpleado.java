@@ -5,6 +5,8 @@
  */
 package ejepracaurlab1;
 
+import ejepracaurlab1.Modelo.Categoria;
+
 /**
  *
  * @author norma
@@ -40,6 +42,8 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
         jTFNombre = new javax.swing.JTextField();
         jTFApellido = new javax.swing.JTextField();
         jTSueldo = new javax.swing.JTextField();
+        jCBCategoria = new javax.swing.JComboBox<>();
+        jCBEmpresa = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         jDInterno.setBackground(new java.awt.Color(153, 102, 255));
@@ -69,7 +73,13 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
         jButton2.setBackground(new java.awt.Color(102, 0, 153));
         jButton2.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(153, 102, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\norma\\Documents\\NetBeansProjects\\ejePracAurLab1\\src\\ejepracaurlab1\\Imagen\\icons8-buscar-cliente-80.png")); // NOI18N
         jButton2.setText("Mostrar Empleado");
+
+        jCBCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new Categoria[] { Categoria.JEFE, Categoria.GERENTE, Categoria.ADMINISTRATIVO, Categoria.OPERARIOPRODUCCION}));
+        jCBCategoria.setSelectedIndex(-1);
+
+        jCBEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jDInterno.setLayer(jLDni, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jLNombre, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -83,41 +93,42 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
         jDInterno.setLayer(jTFNombre, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jTFApellido, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jTSueldo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDInterno.setLayer(jCBCategoria, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDInterno.setLayer(jCBEmpresa, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDInternoLayout = new javax.swing.GroupLayout(jDInterno);
         jDInterno.setLayout(jDInternoLayout);
         jDInternoLayout.setHorizontalGroup(
             jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDInternoLayout.createSequentialGroup()
-                .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jDInternoLayout.createSequentialGroup()
-                        .addContainerGap(174, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addGap(28, 28, 28)
+                        .addComponent(jLDni)
+                        .addGap(44, 44, 44)
+                        .addComponent(jTFDni, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jDInternoLayout.createSequentialGroup()
-                        .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jDInternoLayout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jDInternoLayout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(jLDni)
-                                .addGap(44, 44, 44)
-                                .addComponent(jTFDni, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jDInternoLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLEmpresa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                                    .addComponent(jLCategoria, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLSueldo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTFNombre)
-                                    .addComponent(jTFApellido)
-                                    .addComponent(jTSueldo))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(39, 39, 39))
+                        .addContainerGap()
+                        .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLEmpresa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                            .addComponent(jLCategoria, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLSueldo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTFNombre)
+                            .addComponent(jTFApellido)
+                            .addComponent(jTSueldo)
+                            .addComponent(jCBCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCBEmpresa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(30, 30, 30)
+                .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(39, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDInternoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDInternoLayout.setVerticalGroup(
             jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -134,19 +145,27 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
                 .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addComponent(jLCategoria)
-                .addGap(22, 22, 22)
-                .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLSueldo)
-                    .addComponent(jTSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLEmpresa)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBGuardar)
-                    .addComponent(jButton2))
-                .addContainerGap(14, Short.MAX_VALUE))
+                    .addComponent(jLCategoria)
+                    .addComponent(jCBCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDInternoLayout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLSueldo)
+                            .addComponent(jTSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLEmpresa)
+                            .addComponent(jCBEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDInternoLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(jBGuardar)
+                        .addGap(96, 96, 96))))
         );
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
@@ -172,7 +191,7 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(13, 13, 13)
                 .addComponent(jDInterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,6 +201,8 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<Categoria> jCBCategoria;
+    private javax.swing.JComboBox<String> jCBEmpresa;
     private javax.swing.JDesktopPane jDInterno;
     private javax.swing.JLabel jLCategoria;
     private javax.swing.JLabel jLDni;

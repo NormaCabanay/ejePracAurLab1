@@ -11,10 +11,19 @@ package ejepracaurlab1.Modelo;
  */
 public class Empleado {
      private int dni;
-    private String nombre,apellido,categoria;
+    private String nombre,apellido;
     private double sueldo;
     private Empresa empresa;
+    private Categoria puesto;
 
+    public Empleado(int dni, String nombre, String apellido, double sueldo, Empresa empresa, Categoria puesto) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.sueldo = sueldo;
+        this.empresa = empresa;
+        this.puesto = puesto;
+    }
     public Empleado() {
     }
 
@@ -42,13 +51,15 @@ public class Empleado {
         this.apellido = apellido;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public Categoria getPuesto() {
+        return puesto;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setPuesto(Categoria puesto) {
+        this.puesto = puesto;
     }
+
+    
 
     public double getSueldo() {
         return sueldo;

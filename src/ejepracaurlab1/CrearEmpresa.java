@@ -44,6 +44,7 @@ public class CrearEmpresa extends javax.swing.JInternalFrame {
         jButton1.setBackground(new java.awt.Color(102, 0, 153));
         jButton1.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(153, 153, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\norma\\Documents\\NetBeansProjects\\ejePracAurLab1\\src\\ejepracaurlab1\\Imagen\\icons8-guardar-64.png")); // NOI18N
         jButton1.setText("Crear Empresa");
 
         jLRazSocial.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
@@ -75,8 +76,8 @@ public class CrearEmpresa extends javax.swing.JInternalFrame {
                         .addComponent(jTFRaSocial, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(58, 58, 58))
             .addGroup(jDPInternoLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65)
+                .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDPInternoLayout.setVerticalGroup(
@@ -91,8 +92,8 @@ public class CrearEmpresa extends javax.swing.JInternalFrame {
                     .addComponent(jTFCuit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLCuit))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

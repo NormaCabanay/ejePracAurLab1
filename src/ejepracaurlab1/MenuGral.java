@@ -6,7 +6,7 @@
 package ejepracaurlab1;
 
 import ejepracaurlab1.Modelo.Empleado;
-import java.util.ArrayList;
+import java.util.TreeSet;
 
 
 /**
@@ -14,8 +14,7 @@ import java.util.ArrayList;
  * @author norma
  */
 public class MenuGral extends javax.swing.JFrame {
-public static ArrayList<Empleado> listaEmpleado= new ArrayList<>();
-
+public static TreeSet<Empleado> listaEmpleados= new TreeSet<>();
     /**
      * Creates new form MenuGral
      */
@@ -40,6 +39,8 @@ public static ArrayList<Empleado> listaEmpleado= new ArrayList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        escritorio.setPreferredSize(new java.awt.Dimension(700, 600));
+
         javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
         escritorio.setLayout(escritorioLayout);
         escritorioLayout.setHorizontalGroup(
@@ -48,7 +49,7 @@ public static ArrayList<Empleado> listaEmpleado= new ArrayList<>();
         );
         escritorioLayout.setVerticalGroup(
             escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 265, Short.MAX_VALUE)
         );
 
         jMEmpleado.setText("Empleado");
@@ -71,11 +72,14 @@ public static ArrayList<Empleado> listaEmpleado= new ArrayList<>();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio)
+            .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(escritorio)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -84,10 +88,10 @@ public static ArrayList<Empleado> listaEmpleado= new ArrayList<>();
     private void jMEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMEmpleadoActionPerformed
         escritorio.removeAll();
          escritorio.repaint();
-         datosEmpleado lE = new datosEmpleado();
-         lE.setVisible(true);
-         escritorio.add(lE);
-         escritorio.moveToFront(lE);
+//        datosEmpleado lE = new datosEmpleado();
+//         lE.setVisible(true);
+//         escritorio.add(lE);
+//         escritorio.moveToFront(lE);
     }//GEN-LAST:event_jMEmpleadoActionPerformed
 
     /**
@@ -132,8 +136,5 @@ public static ArrayList<Empleado> listaEmpleado= new ArrayList<>();
     private javax.swing.JMenu jMSueldo;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
-
-    
-
-   
+  
 }
