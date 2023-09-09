@@ -16,12 +16,11 @@ public class Empleado {
     private Empresa empresa;
     private Categoria puesto;
 
-    public Empleado(int dni, String nombre, String apellido, double sueldo, Empresa empresa, Categoria puesto) {
+    public Empleado(int dni, String nombre, String apellido, double sueldo,  Categoria puesto) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.sueldo = sueldo;
-        this.empresa = empresa;
         this.puesto = puesto;
     }
     public Empleado() {

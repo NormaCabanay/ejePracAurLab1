@@ -129,4 +129,6 @@ public class CrearEmpresa extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTFCuit;
     private javax.swing.JTextField jTFRaSocial;
     // End of variables declaration//GEN-END:variables
+
+
 }

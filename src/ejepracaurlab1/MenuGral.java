@@ -87,11 +87,11 @@ public static TreeSet<Empleado> listaEmpleados= new TreeSet<>();
 
     private void jMEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMEmpleadoActionPerformed
         escritorio.removeAll();
-         escritorio.repaint();
-//        datosEmpleado lE = new datosEmpleado();
-//         lE.setVisible(true);
-//         escritorio.add(lE);
-//         escritorio.moveToFront(lE);
+        escritorio.repaint();
+        DatosEmpleado lE = new DatosEmpleado();
+        lE.setVisible(true);
+        escritorio.add(lE);
+        escritorio.moveToFront(lE);
     }//GEN-LAST:event_jMEmpleadoActionPerformed
 
     /**

@@ -6,16 +6,15 @@
 package ejepracaurlab1;
 
 import ejepracaurlab1.Modelo.Categoria;
+import ejepracaurlab1.Modelo.Empleado;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author norma
  */
 public class DatosEmpleado extends javax.swing.JInternalFrame {
-
-    /**
-     * Creates new form DatosEmpleado
-     */
+ private Empleado emplEncontrodo = null;
     public DatosEmpleado() {
         initComponents();
     }
@@ -37,13 +36,14 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
         jLSueldo = new javax.swing.JLabel();
         jLEmpresa = new javax.swing.JLabel();
         jBGuardar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jBBuscarEmp = new javax.swing.JButton();
         jTFDni = new javax.swing.JTextField();
         jTFNombre = new javax.swing.JTextField();
         jTFApellido = new javax.swing.JTextField();
         jTSueldo = new javax.swing.JTextField();
         jCBCategoria = new javax.swing.JComboBox<>();
-        jCBEmpresa = new javax.swing.JComboBox<>();
+        jTFEmpresa = new javax.swing.JTextField();
+        jBSalir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jDInterno.setBackground(new java.awt.Color(153, 102, 255));
@@ -69,17 +69,33 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
         jBGuardar.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
         jBGuardar.setForeground(new java.awt.Color(153, 102, 255));
         jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGuardarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(102, 0, 153));
-        jButton2.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(153, 102, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\norma\\Documents\\NetBeansProjects\\ejePracAurLab1\\src\\ejepracaurlab1\\Imagen\\icons8-buscar-cliente-80.png")); // NOI18N
-        jButton2.setText("Mostrar Empleado");
+        jBBuscarEmp.setBackground(new java.awt.Color(102, 0, 153));
+        jBBuscarEmp.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
+        jBBuscarEmp.setForeground(new java.awt.Color(153, 102, 255));
+        jBBuscarEmp.setIcon(new javax.swing.ImageIcon("C:\\Users\\norma\\Documents\\NetBeansProjects\\ejePracAurLab1\\src\\ejepracaurlab1\\Imagen\\icons8-buscar-cliente-80.png")); // NOI18N
+        jBBuscarEmp.setText("Mostrar Empleado");
+        jBBuscarEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBuscarEmpActionPerformed(evt);
+            }
+        });
 
         jCBCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new Categoria[] { Categoria.JEFE, Categoria.GERENTE, Categoria.ADMINISTRATIVO, Categoria.OPERARIOPRODUCCION}));
-        jCBCategoria.setSelectedIndex(-1);
 
-        jCBEmpresa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jBSalir.setBackground(new java.awt.Color(153, 51, 255));
+        jBSalir.setForeground(new java.awt.Color(153, 102, 255));
+        jBSalir.setText("Salir");
+        jBSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSalirActionPerformed(evt);
+            }
+        });
 
         jDInterno.setLayer(jLDni, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jLNombre, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -88,13 +104,14 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
         jDInterno.setLayer(jLSueldo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jLEmpresa, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jBGuardar, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDInterno.setLayer(jButton2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDInterno.setLayer(jBBuscarEmp, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jTFDni, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jTFNombre, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jTFApellido, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jTSueldo, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDInterno.setLayer(jCBCategoria, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jDInterno.setLayer(jCBEmpresa, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDInterno.setLayer(jTFEmpresa, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDInterno.setLayer(jBSalir, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDInternoLayout = new javax.swing.GroupLayout(jDInterno);
         jDInterno.setLayout(jDInternoLayout);
@@ -121,14 +138,18 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
                             .addComponent(jTFApellido)
                             .addComponent(jTSueldo)
                             .addComponent(jCBCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jCBEmpresa, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(30, 30, 30)
+                            .addComponent(jTFEmpresa))))
+                .addGap(27, 27, 27)
                 .addComponent(jBGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDInternoLayout.createSequentialGroup()
+                .addGap(0, 82, Short.MAX_VALUE)
+                .addComponent(jBBuscarEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDInternoLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jBSalir)
+                .addGap(17, 17, 17))
         );
         jDInternoLayout.setVerticalGroup(
             jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,14 +179,16 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jDInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLEmpresa)
-                            .addComponent(jCBEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTFEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDInternoLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                        .addComponent(jBBuscarEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 62, Short.MAX_VALUE)
+                        .addGap(46, 46, 46))
+                    .addGroup(jDInternoLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addComponent(jBGuardar)
-                        .addGap(96, 96, 96))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jBSalir)
+                .addGap(64, 64, 64))
         );
 
         jLabel1.setFont(new java.awt.Font("Dubai", 1, 14)); // NOI18N
@@ -183,7 +206,7 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,18 +214,54 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addGap(13, 13, 13)
                 .addComponent(jDInterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSalirActionPerformed
+       dispose();
+    }//GEN-LAST:event_jBSalirActionPerformed
+
+    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
+        try{   
+        int dni= Integer.parseInt(jTFDni.getText());
+          String nombre=jTFNombre.getText();
+          String apellido=jTFApellido.getText();
+          String empresa=jTFEmpresa.getText();
+          double sueldo=Double.parseDouble(jTSueldo.getText());
+           Categoria puesto= (Categoria)jCBCategoria.getSelectedItem();
+           
+          Empleado emp = new Empleado(dni, nombre, apellido, sueldo, puesto);
+          
+          if (nombre.isEmpty()|| apellido.isEmpty()) {
+               JOptionPane.showMessageDialog(this,"no debe haber campos en blanco"); 
+               return;
+            }
+          MenuGral.listaEmpleados.add(emp);
+          JOptionPane.showMessageDialog(this,"empleado agregado con exito ");
+          
+        }catch(NumberFormatException nf){
+            JOptionPane.showMessageDialog(this,"debe llenar los campos PRECIO, STOCK");
+        }
+          jTFDni.setText("");
+          jTFNombre.setText("");
+          jTFApellido.setText("");
+          jTFEmpresa.setText("");
+          jTSueldo.setText("");
+    }//GEN-LAST:event_jBGuardarActionPerformed
+
+    private void jBBuscarEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarEmpActionPerformed
+       
+    }//GEN-LAST:event_jBBuscarEmpActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBBuscarEmp;
     private javax.swing.JButton jBGuardar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jBSalir;
     private javax.swing.JComboBox<Categoria> jCBCategoria;
-    private javax.swing.JComboBox<String> jCBEmpresa;
     private javax.swing.JDesktopPane jDInterno;
     private javax.swing.JLabel jLCategoria;
     private javax.swing.JLabel jLDni;
@@ -213,7 +272,10 @@ public class DatosEmpleado extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTFApellido;
     private javax.swing.JTextField jTFDni;
+    private javax.swing.JTextField jTFEmpresa;
     private javax.swing.JTextField jTFNombre;
     private javax.swing.JTextField jTSueldo;
     // End of variables declaration//GEN-END:variables
+
+   
 }
